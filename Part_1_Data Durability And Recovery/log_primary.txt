@@ -1,0 +1,100 @@
+Last login: Mon Feb 28 19:14:05 on ttys000 
+
+huynhthanhviet@Huynhs-Air aws % chmod 400 udacity-2.pem 
+
+huynhthanhviet@Huynhs-Air aws % ssh -i "udacity-2.pem" ec2-user@ec2-54-80-213-208.compute-1.amazonaws.com 
+
+Last login: Mon Feb 28 12:15:07 2022 from 42.113.164.139 
+
+ 
+ 
+
+       __|  __|_  ) 
+
+       _|  (     /   Amazon Linux 2 AMI 
+
+      ___|\___|___| 
+
+ 
+ 
+
+https://aws.amazon.com/amazon-linux-2/ 
+
+-bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory 
+
+[ec2-user@ip-10-1-10-254 ~]$ sudo su 
+
+[root@ip-10-1-10-254 ec2-user]# mysql -h udacity.cej9vxihdnex.us-east-1.rds.amazonaws.com -P 3306 -u admin -p 
+
+Enter password:  
+
+Welcome to the MariaDB monitor.  Commands end with ; or \g. 
+
+Your MySQL connection id is 279 
+
+Server version: 8.0.27 Source distribution 
+
+ 
+ 
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others. 
+
+ 
+ 
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement. 
+
+ 
+ 
+
+MySQL [(none)]> use MusicDatabase 
+
+Reading table information for completion of table and column names 
+
+You can turn off this feature to get a quicker startup with -A 
+
+ 
+ 
+
+Database changed 
+
+MySQL [MusicDatabase]> INSERT INTO music (song_title,artist) VALUES ('Heal the world', 'Micheal Jackson'); 
+
+Query OK, 1 row affected, 1 warning (0.01 sec) 
+
+ 
+ 
+
+MySQL [MusicDatabase]> INSERT INTO music (song_title,artist) VALUES ('Billy Dance', 'Micheal Jackson'); 
+
+Query OK, 1 row affected, 1 warning (0.02 sec) 
+
+ 
+ 
+
+MySQL [MusicDatabase]> select * from music; 
+
++---------+------------------+-----------------+-------+--------------+-------------------------+ 
+
+| song_id | song_title       | artist          | album | release_date | review                  | 
+
++---------+------------------+-----------------+-------+--------------+-------------------------+ 
+
+|       1 | Moonage Daydream | David Bowie     |       |         NULL | NULL                    | 
+
+|       2 | Gangnam Style    | Psy             |       |         NULL | Did not enjoy it at all | 
+
+|       3 | Heal the world   | Micheal Jackson |       |         NULL | NULL                    | 
+
+|       4 | Billy Dance      | Micheal Jackson |       |         NULL | NULL                    | 
+
++---------+------------------+-----------------+-------+--------------+-------------------------+ 
+
+4 rows in set (0.00 sec) 
+
+ 
+ 
+
+MySQL [MusicDatabase]> 
+
+ 

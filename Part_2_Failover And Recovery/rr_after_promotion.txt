@@ -1,0 +1,99 @@
+Last login: Tue Mar  1 10:24:10 on ttys000 
+
+huynhthanhviet@Huynhs-Air ~ % cd Documents 
+
+huynhthanhviet@Huynhs-Air Documents % cd aws 
+
+huynhthanhviet@Huynhs-Air aws % chmod 400 udacity-standby-region.pem 
+
+huynhthanhviet@Huynhs-Air aws % ssh -i "udacity-standby-region.pem" ec2-user@ec2-18-117-141-97.us-east-2.compute.amazonaws.com 
+
+Last login: Tue Mar  1 03:25:03 2022 from 42.113.164.139 
+
+ 
+ 
+
+       __|  __|_  ) 
+
+       _|  (     /   Amazon Linux 2 AMI 
+
+      ___|\___|___| 
+
+ 
+ 
+
+https://aws.amazon.com/amazon-linux-2/ 
+
+-bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory 
+
+[ec2-user@ip-172-16-10-252 ~]$ sudo su 
+
+[root@ip-172-16-10-252 ec2-user]# mysql -h udacity.cua7fd7aiwae.us-east-2.rds.amazonaws.com -P 3306 -u admin -p 
+
+Enter password:  
+
+Welcome to the MariaDB monitor.  Commands end with ; or \g. 
+
+Your MySQL connection id is 13 
+
+Server version: 8.0.27 Source distribution 
+
+ 
+ 
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others. 
+
+ 
+ 
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement. 
+
+ 
+ 
+
+MySQL [(none)]> use MusicDatabase 
+
+Reading table information for completion of table and column names 
+
+You can turn off this feature to get a quicker startup with -A 
+
+ 
+ 
+
+Database changed 
+
+MySQL [MusicDatabase]> INSERT INTO music (song_title,artist) VALUES ('Sometimes', 'Spears'); 
+
+Query OK, 1 row affected, 1 warning (0.00 sec) 
+
+ 
+ 
+
+MySQL [MusicDatabase]> select * from music; 
+
++---------+------------------+-----------------+-------+--------------+-------------------------+ 
+
+| song_id | song_title       | artist          | album | release_date | review                  | 
+
++---------+------------------+-----------------+-------+--------------+-------------------------+ 
+
+|       1 | Moonage Daydream | David Bowie     |       |         NULL | NULL                    | 
+
+|       2 | Gangnam Style    | Psy             |       |         NULL | Did not enjoy it at all | 
+
+|       3 | Heal the world   | Micheal Jackson |       |         NULL | NULL                    | 
+
+|       4 | Billy Dance      | Micheal Jackson |       |         NULL | NULL                    | 
+
+|       5 | Sometimes        | Spears          |       |         NULL | NULL                    | 
+
++---------+------------------+-----------------+-------+--------------+-------------------------+ 
+
+5 rows in set (0.00 sec) 
+
+ 
+ 
+
+MySQL [MusicDatabase]> 
+
+ 

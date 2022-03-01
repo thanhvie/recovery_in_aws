@@ -1,0 +1,4 @@
+1. Minimum RTO for a single AZ outage: should be small as this is a multi-AZ so if one AZ down then there is still another AZ to cover up. Then the minimum RTO can be low as below 5 minutes.
+2. Minimum RTO for a single region outage: e have a replica database in another region but it may require setup to bring it to production. RTO can be 2 hours with conditions that there is 24/7 support team + remote access to systems + documented recovery procedures are available. 
+3. Minimum RPO for a single AZ outage: since the database is multi AZ so this can be small as below 5 minutes.
+4. Minimum RPO for a single region outage: since we have replica database so it should be small as below 20 minutes with assumption that we can detect the database failure and stop the application within 20 minutes.
